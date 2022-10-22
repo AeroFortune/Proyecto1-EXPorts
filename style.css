@@ -8,7 +8,12 @@ body{
 }
 
 .top{
-    padding-bottom: 5px;
+    margin: 0px;
+}
+
+header{
+    padding-top: 5px;
+    margin: 0px;
 }
 
 .barra-main{
@@ -38,4 +43,70 @@ body{
 
 li > a{
     text-decoration: none;
+}
+
+.bot{
+    padding: 3%;
+}
+
+footer{
+    display: flex;
+}
+
+.v-line{
+    border-left: 2.5px solid white;
+    height: 150px;
+}
+
+.sponsors ul{
+    display: flex;
+    justify-content: center;
+}
+
+.sponsors ul li{
+    list-style-type: none;
+}
+
+.sponsors ul li img{
+    height: fit-content;
+}
+
+.sponsors h3{
+    text-align: center;
+}
+
+.quick-links{
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.quick-links ul li{
+    text-align: left;
+}
+
+.logo-footer{
+    padding-left: 4%;
+    padding-right: 4%;    
+}
+
+.logo-footer img{
+    width: 30%;
+}
+
+.bot{
+    background-color: orangered;
+}
+
+.content{
+    background-color: black;
+    color: white;
+    margin: 0px;
+    padding-top: 5%;
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-bottom: 5%;
+}
+
+.content h1{
+    text-align: center;
 }
