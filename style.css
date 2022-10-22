@@ -1,0 +1,41 @@
+body{
+    margin: 0px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.top{
+    padding-bottom: 5px;
+}
+
+.barra-main{
+    background-color: #fff83b;
+    padding: 10px;
+}
+
+.barra-nav{
+    display: flex;
+    margin: 0px;
+}
+
+.barra-nav-elementos{
+    padding-left: 2%;
+    padding-right: 2%;
+    color: black;
+    list-style-type: none;
+}
+
+.barra-nav-elementos.bridge{
+    padding-left: 55%;
+}
+
+.logo{
+    width: 1pw;
+}
+
+li > a{
+    text-decoration: none;
+}
