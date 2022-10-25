@@ -91,7 +91,8 @@ footer{
 
 .quick-links{
     padding-left: 4%;
-    padding-right: 4%;
+    padding-right: 6%;
+    align-self: center;
 }
 
 .quick-links ul li{
@@ -200,7 +201,7 @@ input[type=text], input[type=password], input[type=email] {
     border: 1px solid white;
 }
 
-.block-registro{
+.block-inicio{
     text-align: center;
     border: 1px solid white;
 }
