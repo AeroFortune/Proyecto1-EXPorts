@@ -383,5 +383,58 @@ font-size: larger;
 }    
 
 .table-crud{
-    background-color: wheat;
+    background-color: white;
+    border: 3px solid rgb(146, 136, 136);
+    color: black;
+    text-align: center;
+    width: 100%;
+    align-self: center;
+}
+
+.table-crud tr{
+    border: 1px solid black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.table-crud th{
+    border: 1px solid black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.table-crud td{
+    border: 1px solid black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+td input[type=button]{
+    color: white;
+    border: 0px;
+    margin: 2px;
+    padding: 10px;
+}
+
+td input[type=button][value="Editar"]{
+    background-color: rgb(81, 190, 48);
+}
+
+td input[type=button][value="Eliminar"]{
+    background-color: rgb(190, 48, 48);
+}
+
+td a{
+    text-decoration:underline;
+}
+
+.crud-nav{
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.crud-nav input[type=button]{
+    width: 50%;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
