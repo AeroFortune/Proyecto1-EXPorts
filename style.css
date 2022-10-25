@@ -34,6 +34,8 @@ header{
     margin: 0px;
 }
 
+
+
 .barra-nav-elementos{
     padding-left: 1.5%;
     padding-right: 1.5%;
@@ -204,4 +206,61 @@ input[type=text], input[type=password], input[type=email] {
 .block-inicio{
     text-align: center;
     border: 1px solid white;
+}
+
+.concepto-img1{
+    width: 400px;
+    height: 300px;
+    margin-left: 60px;
+    margin-right: 70px;
+    border-radius: 8px;
+
+}
+
+.concepto-img1:hover {
+    -webkit-transform: rotateY(180deg);
+    -webkit-transform-style: preserve-3d;
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+    transition: 0.7s;
+}
+
+.concepto-img2{
+    width: 400px;
+    height: 300px;
+    margin-left: 70px;
+    margin-right: 60px;
+    border-radius: 8px;
+}
+
+.concepto-img2:hover {
+    -webkit-transform: rotateY(180deg);
+    -webkit-transform-style: preserve-3d;
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+    transition: 0.7s;
+}
+
+.concepto-p{
+    text-align: justify;
+    font-size: 18px;
+    font-variant: small-caps;
+    letter-spacing: 2px;
+    word-spacing: 4px
+}
+
+.conceptos-img3{
+    width: 320px;
+    height: 270px;
+    margin-left: 40px;
+    border-radius: 8px;
+    float: right;
+}
+
+.concepto-li{
+    text-align: justify;
+    font-size: 16px;
+    font-variant: small-caps;
+    letter-spacing: 1px;
+    word-spacing: 2px
 }
