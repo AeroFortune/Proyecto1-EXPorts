@@ -199,3 +199,8 @@ input[type=text], input[type=password], input[type=email] {
     text-align: center;
     border: 1px solid white;
 }
+
+.block-registro{
+    text-align: center;
+    border: 1px solid white;
+}
