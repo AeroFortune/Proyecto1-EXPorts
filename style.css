@@ -140,7 +140,6 @@ footer{
 .banner{
     width: 100%;
     text-align: center;
-
 }
 
 .banner-section{
@@ -173,4 +172,9 @@ footer{
 .banner-section ul li{
     padding-left: 2%;
     list-style-type: none;
+}
+
+.titulo-articulo{
+    font-size: 50px;
+    text-align: left;
 }
