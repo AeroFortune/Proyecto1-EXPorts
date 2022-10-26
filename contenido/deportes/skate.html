@@ -5,137 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skateboarding</title>
-    <style type="text/css">
-        body{
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            margin: 0px;
-            font-size: large;
-            background-color: black;
-
-        }
-
-        .concepto{
-            display: flex;
-            border-bottom: solid 1px;
-            padding: 10px;
-
-        }
-
-        .imagen1 img{
-        height: 400px;
-        border: 3px solid orangered;
-        border-radius: 4px;
-        padding: 5px;
-        margin-left: 60px;
-
-        }
-
-
-        .titulo1 {
-            background-color: #fff83b;;
-            margin: 0px;
-            padding: 10px;
-        }
-
-        .titulo-info1{
-            border-bottom: solid;
-        }
-
-        .concepto2{
-            list-style: none;
-            margin: 20px;
-        }
-        .trucos{
-            display: flex; 
-        }
-
-        .trucos img{
-            margin: auto;
-            display: block;
-        }
-
-        .trucos li{
-        list-style: none;
-        margin: 20px;
-        background-color: #fff83b;
-        color: black;
-        margin: 0px;
-        font-size: larger;
-        }
-        .titulo2{
-            text-align: center;
-        }
-        .trucos2 li{
-            list-style: none;
-            margin: 20px;
-            background-color: #fff83b;
-            color: black;
-            margin: 0px;
-            font-size: larger;
-            padding-bottom: 10px;
-        }
-        .trucos2{
-            display: flex;
-        }
-
-        .trucos2 img{
-            margin: auto;
-            display: block;
-        }
-        .ollie{
-            border: 2px solid orangered;
-            border-radius: 4px;
-            height: fit-content;
-            text-align: justify;
-            padding: 5px;
-
-        }
-
-        .Nollie{
-            border: 2px solid orangered;
-            border-radius: 4px;
-            height: fit-content;
-            text-align: justify;
-            padding: 5px;
-            margin-left: 20px;
-            margin-right: 20px;
-        }
-
-        .shove-it{
-            border: 2px solid orangered;
-            border-radius: 4px;
-            height: fit-content;
-            text-align: justify;
-            padding: 5px;
-        }
-
-        .bigspin{
-            border: 2px solid orangered;
-            border-radius: 4px;
-            text-align: left;
-        }
-
-        .bigspin img{
-            width: 60%;
-        }
-
-        .fifty{
-            border: 2px solid orangered;
-            border-radius: 4px;
-            text-align: left;
-            margin-left: 20px;
-            margin-right: 20px;
-        }
-
-        .fifty img{
-            width: 85%;
-        }    
-        
-    </style>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+    <section class="top">
+        <header class="barra-main">
+            <ul class="barra-nav">
+                <li class="barra-nav-elementos"><a href="/index.html"><img src="/img/logo-rush.png" alt="Logo" class="logo"></a></li>
+                <li class="barra-nav-elementos"><a href="/contenido/deportes/concepto.html">Concepto</a></li>
+                <li class="barra-nav-elementos"><a href="/categorias.html">Categorias</a></li>
+                <li class="barra-nav-elementos bridge"><a href=""><img src="/img/icons/search.png" alt="Icono-Buscar" class="nav-button"></a></li>
+                <li class="barra-nav-elementos"><a href=""><img src="/img/icons/user.png" alt="Icono-Login" class="nav-button"></a></li>
+            </ul>
+        </header>
+    </section>
 
-    <h1 class="titulo1" style="color: black;">Skateboarding</h1>
+    <section class="content">
+        <img src="/img/banners/skate-banner-large.png" alt="" class="banner">
+        <h1 class="titulo1" style="color: black;">Skateboarding</h1>
     <div class="concepto" style="color: white;">
         <div>
             <h3 class="titulo-info1">¿Que es Skateboarding?</h3>
@@ -188,8 +75,32 @@
 
                 </ul>    
             </div>
-
         </div>
     </div>
+    </section>
+    <section class="bot">
+        <footer>
+            <section class="logo-footer">
+                <img src="img/logo-rush.png" alt="">
+            </section>
+            <div class="v-line"></div>
+            <section class="quick-links">
+                <ul>
+                    <li><a href="/contenido/acerca-de.html">Acerca de</a></li>
+                    <li><a href="/contenido/contacto.html">Contactanos</a></li>
+                </ul>
+            </section>
+            <div class="v-line"></div>
+            <section class="sponsors">
+                <ul>
+                    <li>Sponsored by...</li>
+                    <li><img src="" alt=""></li>
+                    <li><img src="" alt=""></li>
+                </ul>   
+            </section>
+        </footer>
+    </section>
+
+    
 </body>
 </html>
