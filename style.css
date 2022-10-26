@@ -439,3 +439,7 @@ td a{
     padding-bottom: 2%;
     font-size: 30px;
 }
+
+.nav-contenido ul li{
+    list-style-type: none;
+}
