@@ -443,3 +443,13 @@ td a{
 .nav-contenido ul li{
     list-style-type: none;
 }
+
+.acerca-de-imagen{
+    border: solid 2px;
+    border-radius: 8px;
+    border-color: orangered;
+    padding: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
