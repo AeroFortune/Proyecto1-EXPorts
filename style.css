@@ -117,6 +117,8 @@ footer{
     color: white;
 }
 
+/*Contenido abajo*/
+
 .content{
     background-color: black;
     color: white;
@@ -127,9 +129,11 @@ footer{
     padding-bottom: 5%;
 }
 
+
 .content h1{
     text-align: center;
 }
+/*Contenido arriba*/
 
 .logo{
     width: 14vw;
@@ -453,3 +457,18 @@ td a{
     margin-right: auto;
     display: block;
 }
+/*Contenido Perfil*/
+.contenido-perfil{
+    display: flex;
+}
+.foto-perfil,.descripcion-perfil{
+    margin: auto;
+}
+
+.form-descripcion{
+    display: flex;
+}
+.form-descripcion-secciones{
+    margin: auto;
+}
+
