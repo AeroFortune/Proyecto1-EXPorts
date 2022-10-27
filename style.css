@@ -278,8 +278,6 @@ input[type=text], input[type=password], input[type=email] {
 
 .imagen1 img{
 height: 400px;
-border: 3px solid orangered;
-border-radius: 4px;
 padding: 5px;
 margin-left: 60px;
 
