@@ -506,3 +506,47 @@ td a{
         width: 500px;
     }
 }
+
+.articulo {
+    color: #ffffff;
+    margin: auto;
+    padding: 10px;
+    width: 400px;
+    height: 400px;
+    text-align: center;
+}
+
+.articulo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.articulo {
+    overflow: hidden;
+}
+
+.articulo-principal {
+    color: #ffffff;
+    margin: auto;
+    padding: 10px;
+    width: 1200px;
+    height: 600px;
+    text-align: center;
+}
+
+.articulo-principal img {
+    width: 800px;
+    height: 400px;
+}
+
+.articulo-principal {
+    overflow: hidden;
+}
+
+.articulo img:hover {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    transition: 0.3s;;
+}
