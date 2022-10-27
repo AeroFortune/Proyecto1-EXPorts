@@ -302,6 +302,11 @@ margin-left: 60px;
 }
 
 
+.trucos img{
+    margin: auto;
+    display: block;
+}
+
 .trucos li{
     list-style: none;
     margin: 20px;
@@ -323,6 +328,10 @@ margin-left: 60px;
     padding-bottom: 10px;
 }
 
+.trucos2 img{
+    margin: auto;
+    display: block;
+}
 .ollie{
     height: fit-content;
     text-align: justify;
