@@ -332,7 +332,7 @@ margin-left: 60px;
 }
 .ollie{
     height: fit-content;
-    text-align: justify;
+    text-align: left;
     padding: 5px;
 
 }
@@ -344,14 +344,14 @@ margin-left: 60px;
 
 .Nollie{
     height: fit-content;
-    text-align: justify;
+    text-align: left;
     padding: 5px;
 }
 
 .shove-it{
 
     height: fit-content;
-    text-align: justify;
+    text-align: left;
     padding: 5px;
 }
 
