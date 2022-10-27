@@ -339,6 +339,10 @@ margin-left: 60px;
 
 }
 
+.ollie-division{
+    display: flex;
+}
+
 .Nollie{
     height: fit-content;
     text-align: justify;
