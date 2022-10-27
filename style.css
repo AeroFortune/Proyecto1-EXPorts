@@ -301,7 +301,7 @@ margin-left: 60px;
     margin: 20px;
 }
 .trucos{
-    display: flex; 
+
 }
 
 .trucos img{
@@ -330,7 +330,7 @@ font-size: larger;
     padding-bottom: 10px;
 }
 .trucos2{
-    display: flex;
+
 }
 
 .trucos2 img{
@@ -384,7 +384,7 @@ font-size: larger;
 
 .fifty img{
     width: 85%;
-}    
+}   
 
 .table-crud{
     background-color: white;
