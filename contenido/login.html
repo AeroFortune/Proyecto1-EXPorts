@@ -14,9 +14,9 @@
     <section class="top">
         <header class="barra-main">
             <ul class="barra-nav">
-                <li class="barra-nav-elementos"><a href="/index.html"><img src="/img/logo-rush.png" alt="Logo" class="logo"></a></li>
-                <li class="barra-nav-elementos"><a href="/contenido/concepto.html">Concepto</a></li>
-                <li class="barra-nav-elementos"><a href="/categorias.html">Categorias</a></li>
+                <li class="barra-nav-elementos"><a href="index.html"><img src="/img/logo-rush.png" alt="Logo" class="logo"></a></li>
+                <li class="barra-nav-elementos"><a href="contenido/concepto.html">Concepto</a></li>
+                <li class="barra-nav-elementos"><a href="categorias.html">Categorias</a></li>
                 <li class="barra-nav-elementos bridge"><a href=""><img src="/img/icons/search.png" alt="Icono-Buscar" class="nav-button"></a></li>
                 <li class="barra-nav-elementos"><a href=""><img src="/img/icons/user.png" alt="Icono-Login" class="nav-button"></a></li>
             </ul>
@@ -24,33 +24,68 @@
     </section>
 
     <!-- Sección de Contenido -->
-    <section class="content">
-        <form action="" class="inicio-registro">
-            <div class="block-inicio">
-                <h1>Inicio de Sesión</h1>
-                <label for="">Usuario</label><br>
-                <input type="text"><br>
-                <label for="">Contraseña</label><br>
-                <input type="password" name="" id=""><br><hr>
-                <input type="submit" value="Inicio" class="registro-boton">
-            </div>
-            <br>
-            <div class="block-registro">
-                <h1>Registro de Usuario</h1>
-                <p>Por favor ingresar los datos.</p>
-                <label for="">Nombre</label><br>
-                <input type="text"><br>
-                <label for="">Usuario</label><br>
-                <input type="text"><br>
-                <label for="">Email</label><br>
-                <input type="email" name="" id=""><br>
-                <label for="">Contraseña</label><br>
-                <input type="password" name="" id=""><br>
-                <label for="">Confirmar Contraseña</label><br>
-                <input type="password" name="" id=""><br><hr>
-                <input type="submit" value="Registrarse" class="registro-boton">
-            </div>
-        </form>
+    <section class="contenedor">
+        <br><br><br><br><br><br><br><br><br><br>
+        <form class="inicio-registro">
+
+            <h2 id="Login">Inicio de Sesión</h2>
+                <div class="contenedor-inicio">
+                    
+                    <div class="input-contenedor">
+                        <img src="/img/icons/correo-electronico.png" id="iconos"> 
+                        <input id="input-login" type="text" placeholder="Correo Electronico">
+                                             
+                     </div>
+
+                     <div class="input-contenedor">
+                        <img src="/img/icons/candado-bloqueado.png" id="iconos"> 
+                        <input id="input-login" type="password" placeholder="Contraseña">
+                                             
+                     </div>
+
+                     <input type="submit" value="Entrar" class="button-login">
+                        <hr>
+                    <p class="p-login">¿No tienes cuenta? <a class="link" href="#Login2">Registrate</a></p>
+                               
+                </div>
+        </form>    
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <form class="inicio-registro">
+
+                <h2 id="Login2">Registro</h2>
+                    <div class="contenedor-inicio">
+                        
+                        <div class="input-contenedor">
+                            <img src="/img/icons/usuario.png" id="iconos"> 
+                            <input id="input-login" type="text" placeholder="Nombre Completo">
+                                                
+                        </div>
+    
+                        <div class="input-contenedor">
+                            <img src="/img/icons/correo-electronico.png" id="iconos"> 
+                            <input id="input-login" type="text" placeholder="Correo Electronico">
+                                                 
+                         </div>
+    
+                         <div class="input-contenedor">
+                            <img src="/img/icons/candado-abierto.png" id="iconos"> 
+                            <input id="input-login" type="password" placeholder="Contraseña">
+                                                 
+                         </div>
+    
+                         <div class="input-contenedor">
+                            <img src="/img/icons/candado-bloqueado.png" id="iconos"> 
+                            <input id="input-login" type="password" placeholder="Confirmar Contraseña">
+                                                 
+                         </div>
+                         <input type="submit" value="Registrate" class="button-login">
+                         <p class="p-login">Al registrarte, aceptas nuestras Condiciones de uso y Políticas de
+                            privacidad.</p>
+                            <hr>
+                        <p class="p-login">¿Ya tienes cuenta? <a class="link" href="#Login">Iniciar Sesion</a></p>
+                                   
+                    </div>
+            </form> 
     </section>
     
     <!-- Pie de Página -->
@@ -62,8 +97,8 @@
             <div class="v-line"></div>
             <section class="quick-links">
                 <ul>
-                    <li><a href="/contenido/acerca-de.html">Acerca de</a></li>
-                    <li><a href="/contenido/contacto.html">Contactanos</a></li>
+                    <li><a href="contenido/acerca-de.html">Acerca de</a></li>
+                    <li><a href="contenido/contacto.html">Contactanos</a></li>
                 </ul>
             </section>
             <div class="v-line"></div>

@@ -515,3 +515,96 @@ td a{
         width: 500px;
     }
 }
+
+
+/*Login*/
+
+.contenedor{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+}
+
+.contenedor-inicio{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px;    
+}
+
+.inicio-registro{
+    background: rgb(233, 233, 233);
+
+    padding: 3px;
+}
+
+.cont-login{
+    margin-top: 150px;
+}
+
+.cont-registro{
+    margin-top: 150px;
+}
+
+#Login{
+    text-align: center;
+    color: #1a2537;
+    font-size: 40px;
+}
+
+#Login2{
+    text-align: center;
+    color: #1a2537;
+    font-size: 40px;
+}
+
+#input-login{
+    font-size: 20px;
+    width: 82%;
+    padding: 10px;
+    border: none;
+}
+
+.input-contenedor{
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+}
+.iconos{
+    min-width: 50px;
+    align-items: center;
+}
+
+.button-login{
+    border: none;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    background: orangered;
+    padding: 15px 20px;
+    cursor: pointer;
+}
+
+.button-login :hover{
+    background: yellow;
+}
+
+.p-login{
+    text-align: center;
+}
+
+.link{
+    text-decoration: none;
+    color: orangered;
+    font-weight: 600;
+}
+
+.link :hover{
+    color: yellow;
+}
+@media(min-width:768px)
+{
+    .inicio-registro{
+        margin: auto;
+        width: 500px;
+        border-radius: 2%;
+    }
+}
