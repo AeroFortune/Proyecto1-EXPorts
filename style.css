@@ -642,3 +642,22 @@ td a{
     border-radius: 50%;
     transition: 0.3s;;
 }
+
+.p-img{
+    display: flex;
+    justify-content: space-around;
+}
+
+.p-img img{
+    width: 15%;
+}
+
+.p-img p{
+    align-self: center;
+}
+
+.contenido {
+    display: flex;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}  
