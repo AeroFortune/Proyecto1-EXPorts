@@ -17,7 +17,6 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
-
 		<dependency>
 			<groupId>org.mariadb.jdbc</groupId>
 			<artifactId>mariadb-java-client</artifactId>
@@ -45,4 +44,21 @@
 		</plugins>
 	</build>
 
+
+
+	<dependencyManagement>
+	
+
+		<dependencies>
+		
+
+			<dependency>
+				<groupId>org.checkerframework</groupId>
+				<artifactId>checker-qual</artifactId>
+				<version>3.27.0</version>
+			</dependency>
+
+		</dependencies>
+
+	</dependencyManagement>
 </project>

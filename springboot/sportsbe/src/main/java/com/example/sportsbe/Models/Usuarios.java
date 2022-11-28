@@ -1,15 +1,23 @@
 package com.example.sportsbe.Models;
 
-public class Usuarios {
-    private int id_user;
-    private String email, password, apellido, fecha;
+import java.sql.Date;
 
-    public Usuarios(int id_user, String email, String password, String apellido, String fecha) {
+public class Usuarios {
+    
+    private int id_user;
+    private String email; 
+    private String password;
+    private String nombre;
+    private String apellido;
+    private Date fecha_nac;
+
+    public Usuarios(int id_user, String email, String password, String nombre, String apellido, Date fecha_nac) {
         this.id_user = id_user;
         this.email = email;
         this.password = password;
+        this.nombre = nombre;
         this.apellido = apellido;
-        this.fecha = fecha;
+        this.fecha_nac = fecha_nac;
     }
 
     public int getId_user() {
@@ -30,17 +38,28 @@ public class Usuarios {
     public void setPassword(String password) {
         this.password = password;
     }
+    
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     public String getApellido() {
         return apellido;
     }
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
-    public String getFecha() {
-        return fecha;
+
+    public Date getFecha_nac() {
+        return fecha_nac;
     }
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
+
+    public void setFecha_nac(Date fecha_nac) {
+        this.fecha_nac = fecha_nac;
     }
-    
+  
 }

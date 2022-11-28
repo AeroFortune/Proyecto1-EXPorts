@@ -1,3 +1,8 @@
+let base = "localhost:8080";
+let usuarios = [];
+let articulos = [];
+let imagenes = [];
+
 function ImprimirHeaderFooter(){
     let contenedor = document.getElementById("top");
     contenedor.innerHTML = ObtenerHeader();
