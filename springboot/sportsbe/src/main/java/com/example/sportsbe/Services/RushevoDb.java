@@ -84,7 +84,12 @@ public class RushevoDb {
         int resultado = 0;
         try {
             Statement stm = _cn.createStatement();
-            String query = "insert into usuarios (email, password, nombre, apellido, fecha_nac) values ('" + usuario.getEmail() + "','" + usuario.getPassword() + "','" + usuario.getNombre() + "','" + usuario.getApellido() + "','" + usuario.getFecha_nac() + "')";
+            String query = "insert into usuarios (email, password, nombre, apellido, fecha_nac) values ('" +
+             usuario.getEmail() + "','" + 
+             usuario.getPassword() + "','" + 
+             usuario.getNombre() + "','" + 
+             usuario.getApellido() + "','" + 
+             usuario.getFecha_nac() + "')";
             resultado = stm.executeUpdate(query);
 
             return resultado;     
@@ -93,4 +98,37 @@ public class RushevoDb {
         }
         return resultado;
     }
+
+    public int ActualizarUsuario(Usuarios usuario) {
+    int resultado = 0;
+    try {
+        Statement stm = _cn.createStatement();
+        String query = "update usuarios set email = '" + usuario.getEmail() +
+        "', password = '" + usuario.getPassword() +
+        "', nombre = '" + usuario.getNombre() +
+        "', apellido = '" + usuario.getApellido() +
+        "', fecha_nac = '" + usuario.getFecha_nac() +
+        "' WHERE id_user = '" + usuario.getId_user() + "'";
+        resultado = stm.executeUpdate(query);
+
+      return resultado;
+    } catch (Exception e) {
+      int x = 1;
+    }
+    return resultado;
+  }
+
+  public int EliminarUsuario(int pid) {
+    int resultado = 0;
+    try {
+      Statement stmt = _cn.createStatement();
+      String query = "DELETE FROM usuarios WHERE id_user = "+pid;
+
+      return stmt.executeUpdate(query);
+
+    } catch (Exception e) {
+      int x = 1;
+    }
+    return resultado;
+  }
 }
