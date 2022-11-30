@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
-    <script src="/index.js"></script>
     <title>Iniciar Sesión</title>
 </head>
 <body onload="ImprimirHeaderFooter()">
@@ -15,69 +14,77 @@
 
     <!-- Sección de Contenido -->
     <section class="contenedor">
-        <br><br><br><br><br><br><br><br><br><br>
-        <form class="inicio-registro" onsubmit="event.preventDefault(); capturar()">
-            <h2 id="Login">Inicio de Sesión</h2>
-            <div class="contenedor-inicio">
-                <div class="input-contenedor">
-                    <img src="/img/icons/correo-electronico.png" id="iconos"> 
-                    <input id="email_login" type="email" placeholder="Correo Electronico" value="aaaaaa@aaaa.com">                
-                </div>
-                <div class="input-contenedor">
-                    <img src="/img/icons/candado-bloqueado.png" id="iconos"> 
-                    <input id="password_login"  type="password" placeholder="Contraseña" value="abcde">                                        
-                </div>
-                <input type="submit" id="loginSubmit" value="Entrar" class="button-login">
-                <hr>
-                <p class="p-login">¿No tienes cuenta? <a class="link" href="#Login2">Registrate</a></p>                  
-            </div>
-        </form>    
 
-        
-            <br><br><br><br><br><br><hr><br><br><br><br><br><br><br>
-        <form class="inicio-registro" onsubmit="event.preventDefault(); RegistrarUsuario();">
-
-                <h2 id="Login2">Registro</h2>
+    
+        <div class="content-tabs">
+            <div data-content id="sesion" class="active">
+                <form class="inicio-registro" onsubmit="event.preventDefault(); capturar()">
+                    <h2 id="Login">Inicio de Sesión</h2>
                     <div class="contenedor-inicio">
                         <div class="input-contenedor">
                             <img src="/img/icons/correo-electronico.png" id="iconos"> 
-                            <input id="emailRegistro" type="text" placeholder="Correo Electronico">
+                            <input id="email_login" type="email" placeholder="Correo Electronico" value="aaaaaa@aaaa.com">                
                         </div>
-    
-                         <div class="input-contenedor">
-                            <img src="/img/icons/candado-abierto.png" id="iconos"> 
-                            <input id="passwordRegistro" type="password" placeholder="Contraseña">                                                
-                         </div>
-
                         <div class="input-contenedor">
-                            <img src="/img/icons/usuario.png" id="iconos"> 
-                            <input id="nombreRegistro" type="text" placeholder="Nombre">                    
+                            <img src="/img/icons/candado-bloqueado.png" id="iconos"> 
+                            <input id="password_login"  type="password" placeholder="Contraseña" value="abcde">                                        
                         </div>
-
-                        <div class="input-contenedor">
-                            <img src="/img/icons/usuario.png" id="iconos"> 
-                            <input id="apellidoRegistro" type="text" placeholder="Apellido">                          
-                        </div>
-
-                        <div class="input-contenedor">
-                            <img src="/img/icons/usuario.png" id="iconos"> 
-                            <input id="fecha_nacRegistro" type="date" placeholder="Fecha de Nacimiento">                          
-                        </div>
-    
-
-                         <input type="submit" value="Registrate" class="button-login">
-                         <p class="p-login">Al registrarte, aceptas nuestras Condiciones de uso y Políticas de
-                            privacidad.</p>
-                            <hr>
-                        <p class="p-login">¿Ya tienes cuenta? <a class="link" href="#Login">Iniciar Sesion</a></p>
-                                   
+                        <input type="submit" id="loginSubmit" value="Entrar" class="button-login">
+                        <hr>
+                        <p class="p-login">¿No tienes cuenta? <a class="link" data-target="#registro">Registrarse</a></p>                  
                     </div>
-        </form> 
+                </form> 
+            </div>
+        </div>   
+
+        
+
+            <div data-content id="registro">
+                <form class="inicio-registro" onsubmit="event.preventDefault(); RegistrarUsuario();">
+ 
+                    <h2 id="Login2">Registro</h2>
+                        <div class="contenedor-inicio">
+                            <div class="input-contenedor">
+                                <img src="/img/icons/correo-electronico.png" id="iconos"> 
+                                <input id="emailRegistro" type="text" placeholder="Correo Electronico">
+                            </div>
+     
+                             <div class="input-contenedor">
+                                <img src="/img/icons/candado-abierto.png" id="iconos"> 
+                                <input id="passwordRegistro" type="password" placeholder="Contraseña">                                                
+                             </div>
+     
+                            <div class="input-contenedor">
+                                <img src="/img/icons/usuario.png" id="iconos"> 
+                                <input id="nombreRegistro" type="text" placeholder="Nombre">                    
+                            </div>
+     
+                            <div class="input-contenedor">
+                                <img src="/img/icons/usuario.png" id="iconos"> 
+                                <input id="apellidoRegistro" type="text" placeholder="Apellido">                          
+                            </div>
+     
+                            <div class="input-contenedor">
+                                <img src="/img/icons/usuario.png" id="iconos"> 
+                                <input id="fecha_nacRegistro" type="date" placeholder="Fecha de Nacimiento">                          
+                            </div>
+     
+     
+                             <input type="submit" value="Registrate" class="button-login">
+                             <p class="p-login">Al registrarte, aceptas nuestras Condiciones de uso y Políticas de
+                                privacidad.</p>
+                                <hr>
+                            <p class="p-login">¿Ya tienes cuenta? <a class="link" href="#Login">Iniciar Sesion</a></p>
+     
+                        </div>
+            </form> 
+            </div> 
     </section>
     
     <!-- Pie de Página -->
     <section class="bot" id="bot">
     </section>
+    <script src="/index.js"></script>
     
 </body>
 </html>
