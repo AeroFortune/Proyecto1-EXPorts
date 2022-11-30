@@ -16,18 +16,18 @@
     <!-- Sección de Contenido -->
     <section class="contenedor">
         <br><br><br><br><br><br><br><br><br><br>
-        <form class="inicio-registro" action="" onsubmit="capturar(event)">
+        <form class="inicio-registro" onsubmit="event.preventDefault(); capturar()">
             <h2 id="Login">Inicio de Sesión</h2>
             <div class="contenedor-inicio">
                 <div class="input-contenedor">
                     <img src="/img/icons/correo-electronico.png" id="iconos"> 
-                    <input id="email_login" type="email" placeholder="Correo Electronico">                
+                    <input id="email_login" type="email" placeholder="Correo Electronico" value="aaaaaa@aaaa.com">                
                 </div>
                 <div class="input-contenedor">
                     <img src="/img/icons/candado-bloqueado.png" id="iconos"> 
-                    <input id="password_login"  type="password" placeholder="Contraseña">                                        
+                    <input id="password_login"  type="password" placeholder="Contraseña" value="abcde">                                        
                 </div>
-                <input type="submit" value="Entrar" class="button-login">
+                <input type="submit" id="loginSubmit" value="Entrar" class="button-login">
                 <hr>
                 <p class="p-login">¿No tienes cuenta? <a class="link" href="#Login2">Registrate</a></p>                  
             </div>
