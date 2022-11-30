@@ -19,7 +19,7 @@ public class RushevoDb {
     public RushevoDb(){
         _cn = new Conexion().openDb();
     }
-
+    //API DE ARTICULOS
     public List<Articulos> ObtenerArticulos(){
         try {
             Statement stmt = _cn.createStatement();
@@ -46,6 +46,53 @@ public class RushevoDb {
         return null;
     }
 
+    public int GuardarActiculos(Articulos articulo){
+        int resultado = 0;
+        try {
+            Statement stm = _cn.createStatement();
+            String query = "insert into articulos (page_name, description, link) values ('" +
+             articulo.getPage_name() + "','" + 
+             articulo.getDescription() + "','" + 
+             articulo.getLink() + "','"+ "')";
+            resultado = stm.executeUpdate(query);
+
+            return resultado;     
+        } catch (Exception e) {
+            int x=1;
+        }
+        return resultado;
+    }
+
+    public int ActualizarArticulos(Articulos articulo) {
+        int resultado = 0;
+        try {
+            Statement stm = _cn.createStatement();
+            String query = "update usuarios set page_name = '" +articulo.getPage_name() +
+            "', description = '" + articulo.getDescription() +
+            "', Link = '" + articulo.getLink()  +
+            "' WHERE id_pag = '" + articulo.getId_pag() + "'";
+            resultado = stm.executeUpdate(query);
+    
+          return resultado;
+        } catch (Exception e) {
+          int x = 1;
+        }
+        return resultado;
+      }
+      public int EliminarArticulo(int pid) {
+        int resultado = 0;
+        try {
+          Statement stmt = _cn.createStatement();
+          String query = "DELETE FROM articulo WHERE id_pag = "+pid;
+    
+          return stmt.executeUpdate(query);
+    
+        } catch (Exception e) {
+          int x = 1;
+        }
+        return resultado;
+      }
+      //API de USUARIOS
     public List<Usuarios> ObtenerUsuarios(){
         try {
             Statement stmt = _cn.createStatement();
@@ -75,20 +122,12 @@ public class RushevoDb {
         return null;    
     }
 
-
-    // public List<Usuarios> EliminarUsuarios(){
-
-    // }
-
-    // public List<Usuarios> ModificarUsuarios(){
-        
-    // }
-    
     public int GuardarUsuarios(Usuarios usuario){
         int resultado = 0;
         try {
             Statement stm = _cn.createStatement();
-            String query = "insert into usuarios (email, password, nombre, apellido, fecha_nac) values ('" +
+            String query = "insert into usuarios values ('" +
+             usuario.getId_user() + "','" + 
              usuario.getEmail() + "','" + 
              usuario.getPassword() + "','" + 
              usuario.getNombre() + "','" + 
