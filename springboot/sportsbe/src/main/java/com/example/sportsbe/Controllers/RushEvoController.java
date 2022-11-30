@@ -14,8 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.sportsbe.Models.Articulos;
+import com.example.sportsbe.Models.UserLogin;
 import com.example.sportsbe.Models.Usuarios;
 import com.example.sportsbe.Services.RushevoDb;
+
+import com.github.cliftonlabs.json_simple.JsonObject;
 
 @RestController
 @CrossOrigin
@@ -51,15 +54,23 @@ public class RushEvoController {
         return new RushevoDb().GuardarUsuarios(usuario); 
     }
 
+
     @PutMapping("/rushevo_db/usuarios/")
     public int ActualizarUsuario(@RequestBody Usuarios usuario){
         return new RushevoDb().ActualizarUsuario(usuario); 
     }
 
+    @CrossOrigin
     @DeleteMapping("/rushevo_db/usuarios/{id_user}")
     public int DeleteUsuario(@PathVariable("id_user") int pid){
         return new RushevoDb().EliminarUsuario(pid); 
     }
+
+    // @PostMapping("/rushevo_db/login/")
+    // public int ObtenerRespuesta(@RequestBody Usuarios usuario){
+    //     return new RushevoDb().ValidarUsuarios(usuario);
+    // }
+
 
     
 

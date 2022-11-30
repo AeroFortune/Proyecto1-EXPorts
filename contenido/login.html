@@ -16,54 +16,63 @@
     <!-- Sección de Contenido -->
     <section class="contenedor">
         <br><br><br><br><br><br><br><br><br><br>
-        <form class="inicio-registro" action="@{/login}" method="post">
+        <form class="inicio-registro" action="">
 
             <h2 id="Login">Inicio de Sesión</h2>
                 <div class="contenedor-inicio">
                     <div class="input-contenedor">
                         <img src="/img/icons/correo-electronico.png" id="iconos"> 
-                        <input id="input-login" type="email" placeholder="Correo Electronico">                
+                        <input id="email" type="email" placeholder="Correo Electronico">                
                      </div>
                      <div class="input-contenedor">
                         <img src="/img/icons/candado-bloqueado.png" id="iconos"> 
-                        <input id="input-login" type="password" placeholder="Contraseña">                                        
+                        <input id="password"  type="password" placeholder="Contraseña">                                        
                      </div>
-                     <input type="submit" value="Entrar" class="button-login">
+                     <input type="submit" value="Entrar" class="button-login" onclick="capturar()">
                         <hr>
-                    <p class="p-login">¿No tienes cuenta? <a class="link" href="#Login2">Registrate</a></p>
-                               
+                    <p class="p-login">¿No tienes cuenta? <a class="link" href="#Login2">Registrate</a></p>                  
                 </div>
         </form>    
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        
+            <br><br><br><br><br><br><hr><br><br><br><br><br><br><br>
         <form class="inicio-registro">
 
                 <h2 id="Login2">Registro</h2>
                     <div class="contenedor-inicio">
-                        
-                        <div class="input-contenedor">
-                            <img src="/img/icons/usuario.png" id="iconos"> 
-                            <input id="input-login" type="text" placeholder="Nombre Completo">
-                                                
-                        </div>
-    
                         <div class="input-contenedor">
                             <img src="/img/icons/correo-electronico.png" id="iconos"> 
-                            <input id="input-login" type="text" placeholder="Correo Electronico">
-                                                 
-                         </div>
+                            <input id="email" type="text" placeholder="Correo Electronico">
+                        </div>
     
                          <div class="input-contenedor">
                             <img src="/img/icons/candado-abierto.png" id="iconos"> 
-                            <input id="input-login" type="password" placeholder="Contraseña">
-                                                 
+                            <input id="password" type="password" placeholder="Contraseña">                                                
                          </div>
     
-                         <div class="input-contenedor">
+                         <!-- <div class="input-contenedor">
                             <img src="/img/icons/candado-bloqueado.png" id="iconos"> 
                             <input id="input-login" type="password" placeholder="Confirmar Contraseña">
                                                  
-                         </div>
-                         <input type="submit" value="Registrate" class="button-login">
+                         </div> -->
+
+                        <div class="input-contenedor">
+                            <img src="/img/icons/usuario.png" id="iconos"> 
+                            <input id="nombre" type="text" placeholder="Nombre">                    
+                        </div>
+
+                        <div class="input-contenedor">
+                            <img src="/img/icons/usuario.png" id="iconos"> 
+                            <input id="apellido" type="text" placeholder="Apellido">                          
+                        </div>
+
+                        <div class="input-contenedor">
+                            <img src="/img/icons/usuario.png" id="iconos"> 
+                            <input id="fecha_nac" type="date" placeholder="Fecha de Nacimiento">                          
+                        </div>
+    
+
+                         <input type="submit" value="Registrate" class="button-login" onclick="GuardarUsuario()">
                          <p class="p-login">Al registrarte, aceptas nuestras Condiciones de uso y Políticas de
                             privacidad.</p>
                             <hr>

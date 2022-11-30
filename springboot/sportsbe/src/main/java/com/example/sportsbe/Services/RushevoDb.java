@@ -2,12 +2,16 @@ package com.example.sportsbe.Services;
 
 import java.sql.Statement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.catalina.User;
 
 import com.example.sportsbe.Models.*;
+
+import com.github.cliftonlabs.json_simple.JsonObject;
 
 public class RushevoDb {
     Connection _cn;
@@ -170,4 +174,26 @@ public class RushevoDb {
     }
     return resultado;
   }
+
+//   public int ValidarUsuarios(Usuarios usuario){
+
+//     int resultado=0;
+
+//     try {
+//         Statement stm = _cn.createStatement();
+//         String query = "select * from usuarios where email = '"+ Usuarios.getEmail() + "' and password = ? '"+ Usuarios.getPassword() + "'"; 
+//         ResultSet result = stm.executeQuery(query);
+
+//         if(result.next()){
+//             //json.put("validar", "SI");
+//             resultado=1;
+//         }
+//         result.close();
+        
+//         return resultado;
+//     } catch (Exception e) {
+//         int x=1;
+//     }
+//     return resultado;
+// }
 }
