@@ -177,7 +177,7 @@ function ImprimirUsuario() {
   
     fetch(baseUrl + "/rushevo_db/usuarios/", {
       method: "POST",
-      body: JSON.stringify(send),
+      body: JSON.stringify(data),
       headers: {
         "Content-type": 'application/json; charset=UTF-8'
       }
@@ -196,4 +196,31 @@ function ImprimirUsuario() {
     document.getElementById('apellido').value = usuario.apellido;
     document.getElementById('fecha_nac').value = usuario.fecha_nac;
   }
- 
+
+
+  function capturar() {
+
+    let send = {
+      email: document.getElementById("email_login").value,
+      password: document.getElementById("password_login").value
+    };
+
+    fetch(baseUrl + '/rushevo_db/login/', {
+      method: "POST",
+      body: JSON.stringify(send),
+      headers: {
+        "Content-type": 'application/json; charset=UTF-8'
+      }
+      }).then(res => { 
+        res.json().then( json => {
+          console.log(json);
+          if (json == 1){
+            alert("Bienvenido!");
+            window.location.href = "/contenido/perfil.html";
+          }
+        });
+      });
+        
+
+
+  }
