@@ -81,8 +81,8 @@ function ImprimirUsuario() {
 function MapearUsuario(usuario) {
   return `<tr>
     <td>
-      <button class='btn btn-danger btn-sm' onclick="EliminarProducto(${usuario.id_user})">Eliminar</button>
-      <button class='btn btn-warning btn-sm' onclick="PopularDatosCampos(${usuario.id_user})">Actualizar</button>
+      <button class='btn btn-danger btn-sm' onclick="EliminarUsuario(${usuario.id_user})">Eliminar</button>
+      <button class='btn btn-warning btn-sm' onclick="PopularDatosCampos(${usuario.id_user})">Modificar</button>
       </td>
     <td>${usuario.id_user}</td>
     <td>${usuario.email}</td>
@@ -94,7 +94,7 @@ function MapearUsuario(usuario) {
 }
 
 function EliminarUsuario(pid) {
-  fetch(baseUrl + '/usuario/' + pid, { method: "Delete" }).then(res => {
+  fetch(baseUrl + '/rushevo_db/usuario/' + pid, { method: "Delete" }).then(res => {
     console.log(res);
     ObtenerUsuarios();
   });
@@ -121,25 +121,23 @@ function GuardarUsuario() {
 }
 
 function PopularDatosCampos(pid) {
-  let usuario = usuarios.filter(p => { return p.id == pid })[0];
+  let usuarioMod = usuarios.filter(p => { return p.id_user == pid })[0];
 
-  document.getElementById('id_user').value = usuario.id_user;
-  document.getElementById('email').value = usuario.email;
-  document.getElementById('nombre').value = usuario.nombre;
-  document.getElementById('apellido').value = usuario.apellido;
-  document.getElementById('fecha_nac').value = usuario.fecha_nac;
+  document.getElementById('id_user').value = usuarioMod.id_user;
+  document.getElementById('email').value = usuarioMod.email;
+  document.getElementById('nombre').value = usuarioMod.nombre;
+  document.getElementById('apellido').value = usuarioMod.apellido;
+  document.getElementById('fecha_nac').value = usuarioMod.fecha_nac;
 }
 
 function capturar() {
 
     let send ={
-      mail :document.getElementById("mail").value,
+      email: document.getElementById("email").value,
+      password: document.getElementById("password").value
+    };
 
-      pass :document.getElementById("pass").value,
-
-    }
-
-    fetch(baseUrl + "/rushevo_db/all", {
+    fetch(baseUrl + "/rushevo_db/login/", {
       method: "POST",
       body: JSON.stringify(send),
       headers: {

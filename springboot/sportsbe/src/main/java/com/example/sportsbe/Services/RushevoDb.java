@@ -136,36 +136,25 @@ public class RushevoDb {
     return resultado;
   }
 
-  public int ValidarUsuarios(UserLogin uLogin){
+//   public int ValidarUsuarios(Usuarios usuario){
 
-    int resultado=0;
+//     int resultado=0;
 
-    try {
-        /*String email="este@gmail.com";
-        String pass="123";*/
+//     try {
+//         Statement stm = _cn.createStatement();
+//         String query = "select * from usuarios where email = '"+ Usuarios.getEmail() + "' and password = ? '"+ Usuarios.getPassword() + "'"; 
+//         ResultSet result = stm.executeQuery(query);
 
-        String email=uLogin.getMail();
-        String pass=uLogin.getPass();
-
-        PreparedStatement statement = _cn.prepareStatement("select * from usuarios where email = ? and password = ?"); 
-        statement.setString(1, email); 
-        statement.setString(2, pass); 
-        ResultSet result = statement.executeQuery();
-
-
+//         if(result.next()){
+//             //json.put("validar", "SI");
+//             resultado=1;
+//         }
+//         result.close();
         
-        //JsonObject json = new JsonObject();
-
-        if(result.next()){
-            //json.put("validar", "SI");
-            resultado=1;
-        }
-        result.close();
-        
-        return resultado;
-    } catch (Exception e) {
-        int x=1;
-    }
-    return resultado;
-}
+//         return resultado;
+//     } catch (Exception e) {
+//         int x=1;
+//     }
+//     return resultado;
+// }
 }

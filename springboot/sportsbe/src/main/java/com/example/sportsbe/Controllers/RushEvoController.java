@@ -40,27 +40,23 @@ public class RushEvoController {
         return new RushevoDb().GuardarUsuarios(usuario); 
     }
 
+
     @PutMapping("/rushevo_db/usuarios/")
     public int ActualizarUsuario(@RequestBody Usuarios usuario){
         return new RushevoDb().ActualizarUsuario(usuario); 
     }
 
+    @CrossOrigin
     @DeleteMapping("/rushevo_db/usuarios/{id_user}")
     public int Delete(@PathVariable("id_user") int pid){
         return new RushevoDb().EliminarUsuario(pid); 
     }
 
-    
-    @PostMapping("/rushevo_db/all")
-    /*public JsonObject ObtenerRespuesta(@RequestBody UserLogin uLogin){
-        
-        return new RushevoDb().ValidarUsuarios(uLogin);
-    }*/
+    // @PostMapping("/rushevo_db/login/")
+    // public int ObtenerRespuesta(@RequestBody Usuarios usuario){
+    //     return new RushevoDb().ValidarUsuarios(usuario);
+    // }
 
-    public int ObtenerRespuesta(@RequestBody UserLogin uLogin){
-        
-        return new RushevoDb().ValidarUsuarios(uLogin);
-    }
 
     
 

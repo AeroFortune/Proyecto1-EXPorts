@@ -3,27 +3,27 @@ package com.example.sportsbe.Models;
 public class UserLogin {
 
     
-    private String mail;
-    private String pass;
+    private String email;
+    private String password;
 
     
-    public UserLogin(String mail, String pass) {
-        this.mail = mail;
-        this.pass = pass;
+    public UserLogin(String email, String password) {
+        this.email = email;
+        this.password = password;
     }
 
 
     public String getMail() {
-        return mail;
+        return email;
     }
-    public void setMail(String mail) {
-        this.mail = mail;
+    public void setMail(String email) {
+        this.email = email;
     }
-    public String getPass() {
-        return pass;
+    public String getPassword() {
+        return password;
     }
-    public void setPass(String pass) {
-        this.pass = pass;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
 
