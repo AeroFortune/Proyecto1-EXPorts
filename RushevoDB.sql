@@ -13,6 +13,13 @@ create table usuarios(
 );
 
 insert into usuarios (email, password, nombre, apellido, fecha_nac) values ('gaming@gaming.com','gaming','gam','ing','2022-11-28');
+update usuarios set (1, 'gamingOriginal@gaming.com','gaming','gam','ing','2022-11-28');
+
+
+update usuarios set
+email = 'gamingOriginall@gaming.com'
+where id_user = 1;
+
 select * from usuarios;
 
 select * from usuarios;
