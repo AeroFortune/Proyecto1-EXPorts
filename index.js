@@ -1,5 +1,6 @@
 let baseUrl = "http://localhost:8080";
 let usuarios = [];
+let articulos = [];
 // Funciones para HeaderFooter Universales
 function ImprimirHeaderFooter(){
     let contenedor = document.getElementById("top");
@@ -58,6 +59,71 @@ targets.forEach(target => {
 	})
 })
 
+//ARTICULOS
+function ObtenerActiculos() {
+  fetch(baseUrl + '/rushevo_db/articulos/all').then(res => {
+    res.json().then(json => {
+      articulos = json;
+      console.log(articulos);
+      console.log('1');
+      ImprimirArticulos();
+    });
+  });
+}
+function ImprimirArticulos() {
+  let contenedor = document.getElementById("cuerpoTablaArticulos");
+  contenedor.innerHTML="";
+
+  articulos.forEach(articulo => {
+    contenedor.innerHTML += MapearArticulos(articulo);
+  });
+}
+function MapearArticulos(articulo) {
+  return `<tr>
+  <td>
+    <button class='btn btn-danger btn-sm' onclick="EliminarArticulo(${articulo.id_pag})">Eliminar</button>
+    <button class='btn btn-warning btn-sm' onclick="PopularDatosCamposArticulo(${articulo.id_pag})">Actualizar</button>
+    </td>
+  <td>${articulo.id_pag}</td>
+  <td>${articulo.page_name}</td>
+  <td>${articulo.description}</td>
+  <td>${articulo.link}</td>
+  
+</tr>`;
+}
+function EliminarArticulo(pid) {
+  fetch(baseUrl + '/rushevo_db/articulos/' + pid, { method: "DELETE" }).then(res => {
+    console.log(res);
+    ObtenerActiculos();
+  });
+}
+function GuardarArticulo() {
+  let data = {
+    id_pag: document.getElementById("id_pag").value,
+    page_name: document.getElementById("page_name").value,
+    description: document.getElementById("description").value,
+    link: document.getElementById("link").value
+  };
+
+  fetch(baseUrl + "/rushevo_db/articulos/", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-type": 'application/json; charset=UTF-8'
+    }
+  }).then(res => {
+    ObtenerActiculos();
+  });
+}
+function PopularDatosCamposArticulo(pid) {
+  let articulo = articulos.filter(p => { return p.id_pag == pid })[0];
+
+  document.getElementById('id_pag').value = articulo.id_pag;
+  document.getElementById('page_name').value = articulo.page_name;
+  document.getElementById('description').value = articulo.description;
+  document.getElementById('link').value = articulo.link;
+}
+//USUARIO
 function ObtenerUsuarios() {
   fetch(baseUrl + '/rushevo_db/usuarios/all').then(res => {
     res.json().then(json => {
@@ -68,10 +134,9 @@ function ObtenerUsuarios() {
     });
   });
 }
-
-
 function ImprimirUsuario() {
     let contenedor = document.getElementById("cuerpoTablaUsuarios");
+    contenedor.innerHTML="";
   
     usuarios.forEach(usuario => {
       contenedor.innerHTML += MapearUsuario(usuario);
@@ -81,7 +146,7 @@ function ImprimirUsuario() {
   function MapearUsuario(usuario) {
     return `<tr>
     <td>
-      <button class='btn btn-danger btn-sm' onclick="EliminarProducto(${usuario.id_user})">Eliminar</button>
+      <button class='btn btn-danger btn-sm' onclick="EliminarUsuario(${usuario.id_user})">Eliminar</button>
       <button class='btn btn-warning btn-sm' onclick="PopularDatosCampos(${usuario.id_user})">Actualizar</button>
       </td>
     <td>${usuario.id_user}</td>
@@ -94,7 +159,7 @@ function ImprimirUsuario() {
   }
 
   function EliminarUsuario(pid) {
-    fetch(baseUrl + '/usuario/' + pid, { method: "Delete" }).then(res => {
+    fetch(baseUrl + '/rushevo_db/usuario/' + pid, { method: "DELETE" }).then(res => {
       console.log(res);
       ObtenerUsuarios();
     });
@@ -102,6 +167,7 @@ function ImprimirUsuario() {
 
   function GuardarUsuario() {
     let data = {
+      id_user: document.getElementById("id_user").value,
       email: document.getElementById("email").value,
       password: document.getElementById("password").value,
       nombre: document.getElementById("nombre").value,
@@ -121,11 +187,13 @@ function ImprimirUsuario() {
   }
 
   function PopularDatosCampos(pid) {
-    let usuario = usuarios.filter(p => { return p.id == pid })[0];
+    let usuario = usuarios.filter(p => { return p.id_user == pid })[0];
   
     document.getElementById('id_user').value = usuario.id_user;
     document.getElementById('email').value = usuario.email;
+    document.getElementById('password').value = usuario.password;
     document.getElementById('nombre').value = usuario.nombre;
     document.getElementById('apellido').value = usuario.apellido;
     document.getElementById('fecha_nac').value = usuario.fecha_nac;
   }
+ 

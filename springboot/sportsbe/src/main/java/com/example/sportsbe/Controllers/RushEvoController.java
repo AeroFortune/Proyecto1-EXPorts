@@ -21,12 +21,26 @@ import com.example.sportsbe.Services.RushevoDb;
 @CrossOrigin
 @Controller
 public class RushEvoController {
-
+    //ARTICULOS
     @GetMapping("/rushevo_db/articulos/all")    
     public List<Articulos> ObtenerArticulos(){
         return new RushevoDb().ObtenerArticulos();
     }
+    @PostMapping("/rushevo_db/articulos/")
+    public int InsertarArticulo(@RequestBody Articulos articulo){
+        return new RushevoDb().GuardarActiculos(articulo); 
+    }
 
+    @PutMapping("/rushevo_db/articulos/")
+    public int ActualizarArticulo(@RequestBody Articulos articulo){
+        return new RushevoDb().ActualizarArticulos(articulo); 
+    }
+
+    @DeleteMapping("/rushevo_db/articulos/{id_pag}")
+    public int DeleteArticulo(@PathVariable("id_pag") int pid){
+        return new RushevoDb().EliminarArticulo(pid); 
+    }
+    //USUARIOS
     @GetMapping("/rushevo_db/usuarios/all")
     public List<Usuarios> ObtenerUsuarios(){
         return new RushevoDb().ObtenerUsuarios();
@@ -43,7 +57,7 @@ public class RushEvoController {
     }
 
     @DeleteMapping("/rushevo_db/usuarios/{id_user}")
-    public int Delete(@PathVariable("id_user") int pid){
+    public int DeleteUsuario(@PathVariable("id_user") int pid){
         return new RushevoDb().EliminarUsuario(pid); 
     }
 

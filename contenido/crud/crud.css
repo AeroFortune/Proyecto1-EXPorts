@@ -2,19 +2,22 @@
 	display: flex;
 }
 
-.menu p {
+.menu h4 {
 	margin-right: 2rem;
   padding: 0px;
 	cursor: pointer;
-  outline: 3px white;
+  outline: 4px white;
+
 }
 
 [data-content] {
 	display: none;
 }
 
+
 .active[data-content] {
 	display: block;
+
 }
 
 table{

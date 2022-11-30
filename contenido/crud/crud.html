@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/Proyecto1-X-Ports/style.css">
     <link rel="stylesheet" href="crud.css">
-    <script src="/index.js"></script>
     <title>Rush Evo</title>
 </head>
-<body onload="ImprimirHeaderFooter(); ObtenerUsuarios()">
+<body onload="ImprimirHeaderFooter(); ObtenerUsuarios(); ObtenerActiculos()">
 
     <!-- DOCUMENTO BASE, POR FAVOR MODIFICAR SI VEN ALGO QUE NO ESTA BIEN -->
     <!-- Barra de Inicio -->
@@ -19,66 +18,69 @@
     <!-- Sección de Contenido -->
     <section class="content">
         <div class="crud-main">
-            <h1>CRUD de Usuarios</h1>
-            <form action="" id="frmProductos" class="inputs">
-               
-                <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="">ID</label>
-                      <input type="text" name="id_user" id="id_user" class="form-control">
-                      <input type="hidden" name="id_user" id="id_user">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="">Email</label>
-                      <input type="text" name="email" id="email" class="form-control">
-                      <input type="hidden" name="email" id="email">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="">Contraseña</label>
-                      <input type="text" name="password" id="password" class="form-control">
-                      <input type="hidden" name="password" id="password">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="">Nombre</label>
-                    <input type="text" name="nombre" id="nombre" class="form-control">
-                    <input type="hidden" name="nombre" id="nombre">
-                </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="">Apellido</label>
-                      <input type="text" name="apellido" id="apellido" class="form-control">
-                      <input type="hidden" name="apellido" id="apellido">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="">Fecha de Nacimiento</label>
-                    <input type="date" step="0.01" name="fecha_nac" id="fecha_nac" class="form-control">
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <a href="#" onclick="GuardarUsuario()" class="button add">Procesar</a><br>
-                    <a href="#" onclick="ActualizarProducto()" class="button update">Actualizar</a>
-                  </div>
-                </div>
-            </form>
-            <hr>
+           
             <div class="menu">
-                <p data-target="#inicio">Usuarios</p>
-                <p data-target="#productos">Contenido</p>
-            </div>
-        
+              <h4 class="option" data-target="#inicio">Usuarios</h4>
+              <h4 data-target="#contenido">Contenido</h4>
+          </div>
             <div class="content-tabs">
                 <div data-content id="inicio" class="active">
+                  <h1>CRUD de Usuarios</h1>
+            
+                  <hr>
+                    
+                  <form action="" id="frmProductos" class="inputs">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="">ID</label>
+                        <input type="text" name="id_user" id="id_user" class="form-control">
+                        <input type="hidden" name="id_user" id="id_user">
+                      </div>
+                    </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="">Email</label>
+                            <input type="text" name="email" id="email" class="form-control">
+                            <input type="hidden" name="id_user" id="id_user">
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="">Contraseña</label>
+                            <input type="text" name="password" id="password" class="form-control">
+                            <input type="hidden" name="password" id="password">
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="">Nombre</label>
+                          <input type="text" name="nombre" id="nombre" class="form-control">
+                      </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="">Apellido</label>
+                            <input type="text" name="apellido" id="apellido" class="form-control">
+                      
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="">Fecha de Nacimiento</label>
+                          <input type="date" step="0.01" name="fecha_nac" id="fecha_nac" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <a href="#" onclick="GuardarUsuario()" class="button add">Procesar</a><br>
+                          <a href="#" onclick="ActualizarProducto()" class="button update">Actualizar</a>
+                        </div>
+                      </div>
+                  </form>
+                    <hr>
                     <h1 class="table-name">Usuarios</h1>
+            
+          
                     <div class="row">
                         <table id="tableUsuarios" class="table-crud">
                           <thead>
@@ -99,21 +101,59 @@
                       </div>
                 </div>
         
-                <div data-content id="productos">
-                    <h1>Contenido</h1>
+                <div data-content id="contenido">
+                  <h1>CRUD de Contenido</h1>
+            
+                  <hr>
+                  <form action="" id="frmProductos" class="inputs">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="">ID Pagine</label>
+                        <input type="text" name="id_pag" id="id_pag" class="form-control">
+                        <input type="hidden" name="id_pag" id="id_pag">
+                      </div>
+                    </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="">Nombre de Pagina</label>
+                            <input type="text" name="page_name" id="page_name" class="form-control">
+                            
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="">Descripción</label>
+                            <input type="text" name="description" id="description" class="form-control">
+                          
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="">Link</label>
+                          <input type="text" name="link" id="link" class="form-control">
+                      </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <a href="#" onclick="GuardarArticulo()" class="button add">Procesar</a><br>
+                          <a href="#" onclick="ActualizarArticulo()" class="button update">Actualizar</a>
+                        </div>
+                      </div>
+                  </form>
+                  <hr>
+                    <h1 class="table-name">Contenido</h1>
                     <div class="row">
                         <table id="tablaUsuarios" class="table-crud" style="width:100%">
                           <thead>
                             <tr>
                               <th>Accion</th>
                               <th>id</th>
-                              <th>email</th>
-                              <th>nombre</th>
-                              <th>apellido</th>
-                              <th>fecha de nacimiento</th>
+                              <th>Nombre de Página</th>
+                              <th>Descripción</th>
+                              <th>Link</th>
                             </tr>
                           </thead>
-                          <tbody id="cuerpoTablaUsuarios">
+                          <tbody id="cuerpoTablaArticulos">
                             
                           </tbody>
                           
@@ -130,6 +170,6 @@
     <!-- Pie de Página -->
     <section class="bot" id="bot">
     </section>
-    
+    <script src="/Proyecto1-X-Ports/index.js"></script>
 </body>
 </html>
