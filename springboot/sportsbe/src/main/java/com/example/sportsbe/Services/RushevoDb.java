@@ -176,6 +176,8 @@ public class RushevoDb {
     return resultado;
   }
 
+  // Login y Registro
+
   public int ValidarUsuarios(Usuarios usuario){
 
     int resultado = 0;

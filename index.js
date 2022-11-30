@@ -260,10 +260,26 @@ function ImprimirUsuario() {
           }
         });
       });
-        
-
-
   }
 
-
-  //a
+  function RegistrarUsuario() {
+    let data = {
+      email: document.getElementById("emailRegistro").value,
+      password: document.getElementById("passwordRegistro").value,
+      nombre: document.getElementById("nombreRegistro").value,
+      apellido: document.getElementById("apellidoRegistro").value,
+      fecha_nac: document.getElementById("fecha_nacRegistro").value,
+    };
+  
+    fetch(baseUrl + "/rushevo_db/usuarios/", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-type": 'application/json; charset=UTF-8'
+      }
+    }).then(res => {
+        alert("Usted se ha registrado!");
+        console.log(res);
+    });
+  }
+  
