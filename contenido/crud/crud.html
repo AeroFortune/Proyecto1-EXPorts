@@ -9,7 +9,7 @@
     <script src="/index.js"></script>
     <title>Rush Evo</title>
 </head>
-<body onload="ImprimirHeaderFooter()">
+<body onload="ImprimirHeaderFooter(); ObtenerUsuarios()">
 
     <!-- DOCUMENTO BASE, POR FAVOR MODIFICAR SI VEN ALGO QUE NO ESTA BIEN -->
     <!-- Barra de Inicio -->
@@ -17,77 +17,84 @@
     </section>
 
     <!-- Sección de Contenido -->
-    <section class="content" onload="ObtenerUsuarios()">
+    <section class="content">
         <div class="crud-main">
-            <h1 style="text-align: left;">CRUD</h1>
-            <form action="" id="frmProductos" class="row">
+            <h1>CRUD de Usuarios</h1>
+            <form action="" id="frmProductos" class="inputs">
                
                 <div class="col-md-6">
                     <div class="form-group">
-                      <label for="">Ingrese el email </label>
+                      <label for="">ID</label>
+                      <input type="text" name="id_user" id="id_user" class="form-control">
+                      <input type="hidden" name="id_user" id="id_user">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="">Email</label>
                       <input type="text" name="email" id="email" class="form-control">
                       <input type="hidden" name="email" id="email">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                      <label for="">Ingrese el contraseña </label>
+                      <label for="">Contraseña</label>
                       <input type="text" name="password" id="password" class="form-control">
                       <input type="hidden" name="password" id="password">
                     </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="">Ingrese el nombre </label>
+                    <label for="">Nombre</label>
                     <input type="text" name="nombre" id="nombre" class="form-control">
                     <input type="hidden" name="nombre" id="nombre">
                 </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                      <label for="">Ingrese el apellido </label>
+                      <label for="">Apellido</label>
                       <input type="text" name="apellido" id="apellido" class="form-control">
                       <input type="hidden" name="apellido" id="apellido">
                     </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="">Ingrese Fecha de nacimiento </label>
+                    <label for="">Fecha de Nacimiento</label>
                     <input type="date" step="0.01" name="fecha_nac" id="fecha_nac" class="form-control">
                   </div>
                 </div>
                 <div class="col-md-12">
                   <div class="form-group">
-                    <a href="#" onclick="GuardarUsuario()" class="btn btn-success btn-block">Procesar</a>
-                    <a href="#" onclick="ActualizarProducto()" class="btn btn-warning btn-block">Actualizar</a>
+                    <a href="#" onclick="GuardarUsuario()" class="button add">Procesar</a><br>
+                    <a href="#" onclick="ActualizarProducto()" class="button update">Actualizar</a>
                   </div>
                 </div>
-              </form>
+            </form>
             <hr>
             <div class="menu">
                 <p data-target="#inicio">Usuarios</p>
                 <p data-target="#productos">Contenido</p>
             </div>
         
-            <div class="content">
+            <div class="content-tabs">
                 <div data-content id="inicio" class="active">
-                    <h1>Usuarios</h1>
+                    <h1 class="table-name">Usuarios</h1>
                     <div class="row">
-                        <table id="tablaProductos" class="table table-striped table-bordered" style="width:100%">
+                        <table id="tableUsuarios" class="table-crud">
                           <thead>
                             <tr>
                               <th>Accion</th>
-                              <th>id</th>
-                              <th>email</th>
-                              <th>nombre</th>
-                              <th>apellido</th>
-                              <th>fecha de nacimiento</th>
+                              <th>ID</th>
+                              <th>Email</th>
+                              <th>Nombre</th>
+                              <th>Apellido</th>
+                              <th>Fecha de Nacimiento</th>
                             </tr>
                           </thead>
-                          <tbody id="cuerpoTabla">
+                          <tbody id="cuerpoTablaUsuarios">
                             
                           </tbody>
-                          
+
                         </table>
                       </div>
                 </div>
@@ -95,7 +102,7 @@
                 <div data-content id="productos">
                     <h1>Contenido</h1>
                     <div class="row">
-                        <table id="tablaProductos" class="table table-striped table-bordered" style="width:100%">
+                        <table id="tablaUsuarios" class="table-crud" style="width:100%">
                           <thead>
                             <tr>
                               <th>Accion</th>
@@ -106,7 +113,7 @@
                               <th>fecha de nacimiento</th>
                             </tr>
                           </thead>
-                          <tbody id="cuerpoTabla">
+                          <tbody id="cuerpoTablaUsuarios">
                             
                           </tbody>
                           
@@ -123,6 +130,6 @@
     <!-- Pie de Página -->
     <section class="bot" id="bot">
     </section>
-    <script src="crud.js"></script>
+    
 </body>
 </html>
