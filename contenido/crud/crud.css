@@ -1,0 +1,36 @@
+.menu {
+	display: flex;
+}
+
+.menu p {
+	margin-right: 2rem;
+	cursor: pointer;
+}
+
+.content {
+	margin-top: 2rem;
+}
+
+[data-content] {
+	display: none;
+}
+
+.active[data-content] {
+	display: block;
+}
+
+table{
+    width:100%;
+  }
+  #example_filter{
+    float:right;
+  }
+  #example_paginate{
+    float:right;
+  }
+  label {
+    display: inline-flex;
+    margin-bottom: .5rem;
+    margin-top: .5rem;
+   
+  }
