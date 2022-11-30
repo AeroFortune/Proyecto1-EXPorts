@@ -46,28 +46,29 @@ public class RushevoDb {
         return null;
     }
 
-    public int GuardarActiculos(Articulos articulo){
-        int resultado = 0;
-        try {
-            Statement stm = _cn.createStatement();
-            String query = "insert into articulos (page_name, description, link) values ('" +
-             articulo.getPage_name() + "','" + 
-             articulo.getDescription() + "','" + 
-             articulo.getLink() + "','"+ "')";
-            resultado = stm.executeUpdate(query);
+    public int GuardarArticulos(Articulos articulo){
+      int resultado = 0;
+      try {
+        Statement stm = _cn.createStatement();
+        String query = "insert into articulos values ('" +
+         articulo.getId_pag() + "','" + 
+         articulo.getPage_name() + "','" + 
+         articulo.getDescription() + "','" + 
+         articulo.getLink() + "')";
+        resultado = stm.executeUpdate(query);
 
-            return resultado;     
-        } catch (Exception e) {
-            int x=1;
-        }
-        return resultado;
-    }
+          return resultado;     
+      } catch (Exception e) {
+          int x=1;
+      }
+      return resultado;
+  }
 
     public int ActualizarArticulos(Articulos articulo) {
         int resultado = 0;
         try {
             Statement stm = _cn.createStatement();
-            String query = "update usuarios set page_name = '" +articulo.getPage_name() +
+            String query = "update articulos set page_name = '" +articulo.getPage_name() +
             "', description = '" + articulo.getDescription() +
             "', Link = '" + articulo.getLink()  +
             "' WHERE id_pag = '" + articulo.getId_pag() + "'";
