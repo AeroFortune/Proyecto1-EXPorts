@@ -132,9 +132,9 @@ function PopularDatosCampos(pid) {
 
 function capturar() {
 
-    let send ={
-      email: document.getElementById("email").value,
-      password: document.getElementById("password").value
+    let send = {
+      email: document.getElementById("email_login").value,
+      password: document.getElementById("password_login").value
     };
 
     fetch(baseUrl + "/rushevo_db/login/", {
@@ -148,8 +148,10 @@ function capturar() {
       {
         window.location.href = "/contenido/perfil.html";
         alert("Se le va a redirigir CUIDAO!");
+        return console.log("whoops!");
       }
-    });
+
+    }).catch(err=>console.log(err));
 
     
 }
