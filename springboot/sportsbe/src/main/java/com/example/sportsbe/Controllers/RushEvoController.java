@@ -31,17 +31,18 @@ public class RushEvoController {
     }
     @PostMapping("/rushevo_db/articulos/")
     public int InsertarArticulo(@RequestBody Articulos articulo){
-        return new RushevoDb().GuardarActiculos(articulo); 
+        return new RushevoDb().GuardarArticulos(articulo); 
     }
 
     @PutMapping("/rushevo_db/articulos/")
     public int ActualizarArticulo(@RequestBody Articulos articulo){
         return new RushevoDb().ActualizarArticulos(articulo); 
     }
-
+    
     @DeleteMapping("/rushevo_db/articulos/{id_pag}")
     public int DeleteArticulo(@PathVariable("id_pag") int pid){
         return new RushevoDb().EliminarArticulo(pid); 
+        //
     }
     //USUARIOS
     @GetMapping("/rushevo_db/usuarios/all")
@@ -58,7 +59,7 @@ public class RushEvoController {
     public int ActualizarUsuario(@RequestBody Usuarios usuario){
         return new RushevoDb().ActualizarUsuario(usuario); 
     }
-
+    
     @DeleteMapping("/rushevo_db/usuarios/{id_user}")
     public int DeleteUsuario(@PathVariable("id_user") int pid){
         return new RushevoDb().EliminarUsuario(pid); 

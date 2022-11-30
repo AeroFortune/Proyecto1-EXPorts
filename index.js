@@ -123,6 +123,24 @@ function PopularDatosCamposArticulo(pid) {
   document.getElementById('description').value = articulo.description;
   document.getElementById('link').value = articulo.link;
 }
+function ActualizarArticulo() {
+  let data = {
+    id_pag: document.getElementById("id_pag").value,
+    page_name: document.getElementById("page_name").value,
+    description: document.getElementById("description").value,
+    link: document.getElementById("link").value,
+  };
+
+  fetch(baseUrl + "/rushevo_db/articulos/", {
+    method: "PUT",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-type": 'application/json; charset=UTF-8'
+    }
+  }).then(res => {
+    ObtenerActiculos();
+  });
+}
 //USUARIO
 function ObtenerUsuarios() {
   fetch(baseUrl + '/rushevo_db/usuarios/all').then(res => {
@@ -177,7 +195,7 @@ function ImprimirUsuario() {
   
     fetch(baseUrl + "/rushevo_db/usuarios/", {
       method: "POST",
-      body: JSON.stringify(send),
+      body: JSON.stringify(data),
       headers: {
         "Content-type": 'application/json; charset=UTF-8'
       }
@@ -195,5 +213,26 @@ function ImprimirUsuario() {
     document.getElementById('nombre').value = usuario.nombre;
     document.getElementById('apellido').value = usuario.apellido;
     document.getElementById('fecha_nac').value = usuario.fecha_nac;
+  }
+
+  function ActualizarUsuario() {
+    let data = {
+      id_user: document.getElementById("id_user").value,
+      email: document.getElementById("email").value,
+      password: document.getElementById("password").value,
+      nombre: document.getElementById("nombre").value,
+      apellido: document.getElementById("apellido").value,
+      fecha_nac: document.getElementById("fecha_nac").value
+    };
+  
+    fetch(baseUrl + "/rushevo_db/usuarios/", {
+      method: "PUT",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-type": 'application/json; charset=UTF-8'
+      }
+    }).then(res => {
+      ObtenerUsuarios();
+    });
   }
  
