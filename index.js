@@ -260,26 +260,79 @@ function ImprimirUsuario() {
           }
         });
       });
+    }
+
+    function RegistrarUsuario() {
+      let data = {
+        email: document.getElementById("emailRegistro").value,
+        password: document.getElementById("passwordRegistro").value,
+        nombre: document.getElementById("nombreRegistro").value,
+        apellido: document.getElementById("apellidoRegistro").value,
+        fecha_nac: document.getElementById("fecha_nacRegistro").value,
+      };
+    
+      fetch(baseUrl + "/rushevo_db/usuarios/", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-type": 'application/json; charset=UTF-8'
+        }
+      }).then(res => {
+          alert("Usted se ha registrado!");
+          console.log(res);
+      });
+    } 
+
+//buscar
+function ObtenerActiculosBusc() {
+  fetch(baseUrl + '/rushevo_db/articulos/all').then(res => {
+    res.json().then(json => {
+      articulos = json;
+      console.log(articulos);
+      console.log('1');
+      ImprimirArticulosBusc();
+    });
+  });
+}
+function ImprimirArticulosBusc() {
+  let contenedor = document.getElementById("listaArticulos");
+  contenedor.innerHTML="";
+
+  articulos.forEach(articulo => {
+    contenedor.innerHTML += MapearArticulosBusc(articulo);
+  });
+}
+function MapearArticulosBusc(articulo) {
+  return `<li class="page">${articulo.page_name}</li>`;
+}
+
+
+const paginas = [
+  {nombre: "platano", valor:500}
+]
+
+const formulario = document.querySelector("#formulario");
+const boton = document.querySelector("#boton")
+const resultado = document.querySelector("#resultado")
+
+const filtrar = () => {
+  ObtenerActiculos();
+  resultado.innerHTML = "";
+  const texto = formulario.value.toLowerCase();
+
+  for(let articulo of articulos){
+      let page_name = articulo.page_name.toLowerCase();
+      if(page_name.indexOf(texto)!== -1){
+          resultado.innerHTML += `<a href="${articulo.link}"class=" pag list-group-item ">${articulo.page_name} </a> `
+      }
   }
 
-  function RegistrarUsuario() {
-    let data = {
-      email: document.getElementById("emailRegistro").value,
-      password: document.getElementById("passwordRegistro").value,
-      nombre: document.getElementById("nombreRegistro").value,
-      apellido: document.getElementById("apellidoRegistro").value,
-      fecha_nac: document.getElementById("fecha_nacRegistro").value,
-    };
-  
-    fetch(baseUrl + "/rushevo_db/usuarios/", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-type": 'application/json; charset=UTF-8'
-      }
-    }).then(res => {
-        alert("Usted se ha registrado!");
-        console.log(res);
-    });
+  if(resultado.innerHTML === ""){
+      resultado.innerHTML += `<a href="" class=" pag list-group-item list-group-item-action">Producto no encontrado...</a>`
   }
-  
+}
+boton.addEventListener("click", filtrar)
+formulario.addEventListener("keyup",filtrar)
+filtrar();
+
+
