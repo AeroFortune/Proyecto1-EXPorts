@@ -88,9 +88,11 @@ function MapearArticulos(articulo) {
   <td>${articulo.page_name}</td>
   <td>${articulo.description}</td>
   <td>${articulo.link}</td>
-  
+  <td><button onclick="window.open('${articulo.link}')">Visualizar</button></td> 
 </tr>`;
 }
+
+
 function EliminarArticulo(pid) {
   fetch(baseUrl + '/rushevo_db/articulos/' + pid, { method: "DELETE" }).then(res => {
     console.log(res);
@@ -172,7 +174,6 @@ function ImprimirUsuario() {
     <td>${usuario.nombre}</td>
     <td>${usuario.apellido}</td>
     <td>${usuario.fecha_nac}</td>
-    
   </tr>`;
   }
 
