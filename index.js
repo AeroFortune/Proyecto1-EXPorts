@@ -312,6 +312,8 @@ function ImprimirUsuario() {
             alert("Bienvenido!");
             window.location.href = "/contenido/perfil.html";
             localStorage.setItem("prueba", json_userid);
+          } else {
+            alert("Datos incorrectos! Por favor verificar e intentarlo otra vez.");
           }
         });
       });
