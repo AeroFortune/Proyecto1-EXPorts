@@ -1,18 +1,11 @@
 let baseUrl = "http://localhost:8080";
 let usuarios = [];
 let articulos = [];
-// Funciones para HeaderFooter Universales
+
+// Funciones para HeaderFooter Universales, ahorra trabajo pero lo unico malo es que no ayuda para el SEO (Search Engine Optimization).
 function ImprimirHeaderFooter(){
     let contenedor = document.getElementById("top");
-    contenedor.innerHTML = ObtenerHeader();
-
-    let contenedor2 = document.getElementById("bot");
-    contenedor2.innerHTML = ObtenerFooter();
-
-}
-
-function ObtenerHeader(){
-    return `<header class="barra-main ">
+    contenedor.innerHTML = `<header class="barra-main ">
     <ul class="barra-nav">
         <li class="barra-nav-elementos"><a href="/index.html"><img src="/img/logo-rush.png" alt="Logo" class="logo"></a></li>
         <li class="barra-nav-elementos"><a href="/contenido/deportes/concepto.html">Concepto</a></li>
@@ -21,10 +14,9 @@ function ObtenerHeader(){
         <li class="barra-nav-elementos"><a href="/contenido/login.html"><img src="/img/icons/user.png" alt="Icono-Login" class="nav-button"></a></li>
     </ul>
     </header>`;
-}
 
-function ObtenerFooter(){
-    return `<footer>
+    let contenedor2 = document.getElementById("bot");
+    contenedor2.innerHTML = `<footer>
     <section class="logo-footer">
         <img src="/img/logo-rush.png" alt="">
     </section>
@@ -44,9 +36,13 @@ function ObtenerFooter(){
         </ul>   
     </section>
     </footer>`;
-    }
+
+}
+
    
-// Funciones para CRUD y etc
+// Sección para CRUD y etc.
+
+// Que hace esto?
 const targets = document.querySelectorAll('[data-target]');
 const content = document.querySelectorAll('[data-content]');
 targets.forEach(target => {
@@ -59,7 +55,7 @@ targets.forEach(target => {
 	})
 })
 
-//ARTICULOS
+// Obtener Articulos de la BD, auto explicatorio.
 function ObtenerActiculos() {
   fetch(baseUrl + '/rushevo_db/articulos/all').then(res => {
     res.json().then(json => {
@@ -70,6 +66,8 @@ function ObtenerActiculos() {
     });
   });
 }
+
+// Imprimir Articulos, auto explicatorio.
 function ImprimirArticulos() {
   let contenedor = document.getElementById("cuerpoTablaArticulos");
   contenedor.innerHTML="";
@@ -285,11 +283,6 @@ function ImprimirUsuario() {
     });
 
   }
-
-
-  //let gato = localStorage.getItem("prueba");
-
-  let gato = 10;
 
 
   function capturar() {
