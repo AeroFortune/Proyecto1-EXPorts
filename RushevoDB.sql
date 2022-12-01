@@ -22,7 +22,7 @@ where id_user = 1;
 
 select * from usuarios where email = 'aaaaaa@aaaa.com' and password = 'abcde';
 
-select * from usuarios;
+select * from usuarios where id_user = 10;
 
 -- hacer
 create table articulos(
