@@ -249,31 +249,14 @@ function ImprimirUsuario() {
 
   function CargarPerfil(){
 
-
-    let send = {
-      pid: localStorage.getItem("prueba")
-    };
-
     // enviar ID a backend > backend retorna data > data es colocada en respectivos lugares
-    let data = {
-      email: document.getElementById("email").value,
-      password: document.getElementById("password").value,
-      nombre: document.getElementById("nombre").value,
-      apellido: document.getElementById("apellido").value,
-      fecha_nac: document.getElementById("fecha_nac").value
-    };
+    let data = [];
   
-    fetch(baseUrl + "/rushevo_db/usuarios/", {
-      method: "PUT",
-      body: JSON.stringify(send),
-      headers: {
-        "Content-type": 'application/json; charset=UTF-8'
-      }
-    }).then(res => { res.json().then(json => {
+    fetch(baseUrl + "/rushevo_db/usuarios/" + localStorage.getItem("prueba")
+    ).then(res => { res.json().then(json => {
       data = json;
-      console.log(data);
-      console.log('1');   
-      document.getElementById('id_user').value = data.id_user;
+      console.log(data); 
+      console.log(data.email);
       document.getElementById('email').value = data.email;
       document.getElementById('password').value = data.password;
       document.getElementById('nombre').value = data.nombre;
