@@ -70,6 +70,12 @@ public class RushEvoController {
         return new RushevoDb().ValidarUsuarios(usuario);
     }
 
+    @PostMapping("/rushevo_db/usuarios/especifico")
+    public List<Usuarios> ObtenerUsuariosID(@RequestBody int pid){
+        return new RushevoDb().ObtenerUsuariosPorId(pid);
+    }
+
+
 
     
 

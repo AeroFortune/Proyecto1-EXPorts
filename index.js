@@ -12,7 +12,7 @@ function ImprimirHeaderFooter(){
 }
 
 function ObtenerHeader(){
-    return `<header class="barra-main">
+    return `<header class="barra-main ">
     <ul class="barra-nav">
         <li class="barra-nav-elementos"><a href="/index.html"><img src="/img/logo-rush.png" alt="Logo" class="logo"></a></li>
         <li class="barra-nav-elementos"><a href="/contenido/deportes/concepto.html">Concepto</a></li>
@@ -31,8 +31,8 @@ function ObtenerFooter(){
     <div class="v-line"></div>
     <section class="quick-links">
         <ul>
-            <li><a href="/contenido/acerca-de.html">Acerca de</a></li>
-            <li><a href="/contenido/contacto.html">Contactanos</a></li>
+            <li><a class="footer-links" href="/contenido/acerca-de.html">Acerca de</a></li>
+            <li><a class="footer-links" href="/contenido/contacto.html">Contactanos</a></li>
         </ul>
     </section>
     <div class="v-line"></div>
@@ -154,6 +154,8 @@ function ObtenerUsuarios() {
     });
   });
 }
+
+const perfil = document.querySelector("#perfil");
 function ImprimirUsuario() {
     let contenedor = document.getElementById("cuerpoTablaUsuarios");
     contenedor.innerHTML="";
@@ -237,6 +239,57 @@ function ImprimirUsuario() {
     });
   }
 
+  function PopularDatosCamposPerfil(gato) {
+    let usuario = usuarios.filter(p => { return p.id_user == gato })[0];
+  
+    document.getElementById('email').value = usuario.email;
+    document.getElementById('password').value = usuario.password;
+    document.getElementById('nombre').value = usuario.nombre;
+    document.getElementById('apellido').value = usuario.apellido;
+    document.getElementById('fecha_nac').value = usuario.fecha_nac;
+  }
+
+  function CargarPerfil(){
+
+
+    let send = {
+      pid: localStorage.getItem("prueba")
+    };
+
+    // enviar ID a backend > backend retorna data > data es colocada en respectivos lugares
+    let data = {
+      email: document.getElementById("email").value,
+      password: document.getElementById("password").value,
+      nombre: document.getElementById("nombre").value,
+      apellido: document.getElementById("apellido").value,
+      fecha_nac: document.getElementById("fecha_nac").value
+    };
+  
+    fetch(baseUrl + "/rushevo_db/usuarios/", {
+      method: "PUT",
+      body: JSON.stringify(send),
+      headers: {
+        "Content-type": 'application/json; charset=UTF-8'
+      }
+    }).then(res => { res.json().then(json => {
+      data = json;
+      console.log(data);
+      console.log('1');   
+      document.getElementById('id_user').value = data.id_user;
+      document.getElementById('email').value = data.email;
+      document.getElementById('password').value = data.password;
+      document.getElementById('nombre').value = data.nombre;
+      document.getElementById('apellido').value = data.apellido;
+      document.getElementById('fecha_nac').value = data.fecha_nac;
+    });
+    });
+
+  }
+
+
+  //let gato = localStorage.getItem("prueba");
+
+  let gato = 10;
 
 
   function capturar() {
@@ -253,15 +306,17 @@ function ImprimirUsuario() {
         "Content-type": 'application/json; charset=UTF-8'
       }
       }).then(res => { 
-        res.json().then( json => {
-          console.log(json);
-          if (json == 1){
+        res.json().then( json_userid => {
+          console.log(json_userid);
+          if (json_userid != 0){
             alert("Bienvenido!");
             window.location.href = "/contenido/perfil.html";
+            localStorage.setItem("prueba", json_userid);
           }
         });
       });
     }
+    
 
     function RegistrarUsuario() {
       let data = {
@@ -285,32 +340,7 @@ function ImprimirUsuario() {
     } 
 
 //buscar
-function ObtenerActiculosBusc() {
-  fetch(baseUrl + '/rushevo_db/articulos/all').then(res => {
-    res.json().then(json => {
-      articulos = json;
-      console.log(articulos);
-      console.log('1');
-      ImprimirArticulosBusc();
-    });
-  });
-}
-function ImprimirArticulosBusc() {
-  let contenedor = document.getElementById("listaArticulos");
-  contenedor.innerHTML="";
 
-  articulos.forEach(articulo => {
-    contenedor.innerHTML += MapearArticulosBusc(articulo);
-  });
-}
-function MapearArticulosBusc(articulo) {
-  return `<li class="page">${articulo.page_name}</li>`;
-}
-
-
-const paginas = [
-  {nombre: "platano", valor:500}
-]
 
 const formulario = document.querySelector("#formulario");
 const boton = document.querySelector("#boton")
@@ -324,7 +354,7 @@ const filtrar = () => {
   for(let articulo of articulos){
       let page_name = articulo.page_name.toLowerCase();
       if(page_name.indexOf(texto)!== -1){
-          resultado.innerHTML += `<a href="${articulo.link}"class=" pag list-group-item ">${articulo.page_name} </a> `
+          resultado.innerHTML += `<a href="${articulo.link}"class=" pag list-group-item "><h4>${articulo.page_name}</h4><p>${articulo.description}</p></a> `
       }
   }
 
@@ -336,4 +366,5 @@ boton.addEventListener("click", filtrar)
 formulario.addEventListener("keyup",filtrar)
 filtrar();
 
+//perfil
 

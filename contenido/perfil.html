@@ -15,7 +15,7 @@
     
 </head>
 
-<body onload="ImprimirHeaderFooter()">
+<body onload="ImprimirHeaderFooter(); CargarPerfil()">
 
     <!-- DOCUMENTO BASE, POR FAVOR MODIFICAR SI VEN ALGO QUE NO ESTA BIEN -->
     <!-- Barra de Inicio -->
@@ -24,8 +24,8 @@
     <!-- Por que quitaste el header? -->
 
     <!-- Sección de Contenido -->
-    <section class="content">
-        <h1>Bienvenido a tu perfil, ____!</h1>
+    <section class="content" id="perfil">
+        
         <div class="contenido-perfil">
 
             <section class="foto-perfil">
@@ -36,26 +36,30 @@
                 <form action="">
                     <div class="contenedor">
                         <div>
+                            <label for="" class="">Email</label><br>
+                            <input class="" type="text" id="email">
+                        </div>
+                        <div>
+                            <label for="" class="">Contraseña</label><br>
+                            <input class="" type="text" id="password">
+                        </div>
+                        <div>
                             <label for="" class="">Nombre</label><br>
-                            <input class="" type="text" placeholder="Nombre" id="nombre">
+                            <input class="" type="text" id="nombre">
                         </div>
                         <div>
                             <label for="" class="">Apellido</label><br>
-                            <input class="" type="text" placeholder="Apellido" id="apellido">
-                        </div>
-                        <div>
-                            <label for="" class="">Correo electronico</label><br>
-                            <input class="" type="email" placeholder="Correo Electronico" id="email">
+                            <input class="" type="text" id="apellido">
                         </div>
                         <div>
                             <label for="" class="">Fecha de Nacimiento</label><br>
-                            <input class="" type="date" placeholder="" id="fecha_nac">
+                            <input class="" type="date"  id="fecha_nac">
                         </div>
                         <!-- <div>
                             <label for="" class="">Correo electronico </label><br>
                             <input class="" type="" placeholder="Correo Electronico" id="email">
                         </div> -->
-                        <input type="submit" value="Actualizar Datos" onclick="">
+                        <input type="submit" value="Actualizar Datos" onclick="PopularDatosCamposPerfil();">
                     </div>
                 </form>
             </section>

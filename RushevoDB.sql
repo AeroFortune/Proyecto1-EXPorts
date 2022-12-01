@@ -20,7 +20,7 @@ update usuarios set
 email = 'gamingOriginall@gaming.com'
 where id_user = 1;
 
-select * from usuarios;
+select * from usuarios where email = 'aaaaaa@aaaa.com' and password = 'abcde';
 
 select * from usuarios;
 
@@ -44,6 +44,15 @@ create table imagenes_articulos(
 ); 
 
 insert into articulos (page_name, description, link) values ('Concepto','Explicación del concepto de Deportes Extremos','/contenido/deportes/concepto.html');
+insert into articulos (page_name, description, link) values ('Acerca De','Breve resumen sobre nosotros y el proyecto.','/contenido/acerca-de.html');
+insert into articulos (page_name, description, link) values ('Skate','Explicación sobre el deporte extremo de Skating.','/contenido/deportes/skate.html');
+insert into articulos (page_name, description, link) values ('Escalada','Explicación sobre el deporte extremo de escalar.','/contenido/deportes/escalada.html');
+insert into articulos (page_name, description, link) values ('Skydiving','Explicación sobre el deporte extremo de Skydiving o Paracaidismo.','/contenido/deportes/skydiving.html');
+insert into articulos (page_name, description, link) values ('Surf','Explicación sobre el deportes extremo de Surfing.','/contenido/deportes/surf.html');
+insert into articulos (page_name, description, link) values ('Motocross','Explicación sobre el deporte extremo de Motocross.','/contenido/deportes/motocross.html');
+
+
+
 
 insert into imagenes_articulos (pag_id, img_name, img_url) values (1, 'BannerPrueba', '/img/Concepto_2.jpg');
 

@@ -183,19 +183,64 @@ public class RushevoDb {
     int resultado = 0;
 
     try {
-        Statement stm = _cn.createStatement();
+
+        String email=usuario.getEmail();
+        String pass=usuario.getPassword();
+
+        PreparedStatement statement = _cn.prepareStatement("select * from usuarios where email = ? and password = ?");
+
+        statement.setString(1, email); 
+        statement.setString(2, pass); 
+        ResultSet result = statement.executeQuery();
+
+
+        /*Statement stm = _cn.createStatement();
         String query = "select * from usuarios where email = '"+ usuario.getEmail() + "' and password =     '"+ usuario.getPassword() + "'"; 
-        ResultSet result = stm.executeQuery(query);
+        ResultSet result = stm.executeQuery(query);*/
 
         if(result.next()){
-            resultado=1;
+            resultado = result.getInt("id_user");
         }
         result.close();
-        stm.close();
+        statement.close();
         return resultado;
     } catch (Exception e) {
         int x=1;
     }
     return resultado;
 }
+
+
+        public List<Usuarios> ObtenerUsuariosPorId(int pid){
+          try {
+              Statement stmt = _cn.createStatement();
+              String query = "SELECT * FROM usuarios WHERE id_user   = " + pid ;
+
+              List<Usuarios> usuarios = new ArrayList<>();
+              ResultSet result = stmt.executeQuery(query);
+              while(result.next()){
+                  Usuarios usuario = new Usuarios(
+                      result.getInt("id_user"),
+                      result.getString("email"),
+                      result.getString("password"),
+                      result.getString("nombre"),
+                      result.getString("apellido"),
+                      result.getDate("fecha_nac")
+                      );
+                  usuarios.add(usuario);
+              }
+              result.close();
+              stmt.close();
+              return usuarios;
+              
+          } catch (Exception e) {
+              int x = 1;
+              e.printStackTrace();
+          }
+          return null;    
+        }
+    
+
+
+
 }

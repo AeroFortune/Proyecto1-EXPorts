@@ -127,6 +127,7 @@ footer{
     padding-right: 10%;
     padding-left: 10%;
     padding-bottom: 5%;
+    
 }
 
 
@@ -668,4 +669,16 @@ margin-left: 60px;
 .pag a, a:hover, a:visited, a:active {
     color: black;
     text-decoration: none;
+}
+
+.expand{
+    width: 100%;
+}
+
+.footer-links{
+    color: white;
+}
+
+.parrafo{
+    text-align: justify;
 }
