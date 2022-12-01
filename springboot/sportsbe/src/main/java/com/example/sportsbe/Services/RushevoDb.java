@@ -239,6 +239,28 @@ public class RushevoDb {
           }
           return null;    
         }
+
+
+        public List<ImagenesArticulos> ObtenerImagenes(){
+          try {
+              Statement stmt = _cn.createStatement();
+              String query = "SELECT * FROM imagenes_articulos";
+  
+              List<ImagenesArticulos> imagenes = new ArrayList<>();
+              ResultSet result = stmt.executeQuery(query);
+              while(result.next()){
+                  ImagenesArticulos imagen = new ImagenesArticulos(result.getInt("id_img"), result.getInt("pag_id"), result.getString("img_name"), result.getString("img_url"));
+                  imagenes.add(imagen);
+              }
+              result.close();
+              stmt.close();
+              return imagenes;
+          } catch (Exception e) {
+              int x = 1;
+              e.printStackTrace();
+          }
+          return null;
+      }
     
 
 

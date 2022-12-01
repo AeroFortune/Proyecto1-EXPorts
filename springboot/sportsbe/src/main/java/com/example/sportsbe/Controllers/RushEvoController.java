@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.sportsbe.Models.Articulos;
+import com.example.sportsbe.Models.ImagenesArticulos;
 import com.example.sportsbe.Models.UserLogin;
 import com.example.sportsbe.Models.Usuarios;
 import com.example.sportsbe.Services.RushevoDb;
@@ -73,6 +74,11 @@ public class RushEvoController {
     @GetMapping("/rushevo_db/usuarios/{id_user}")
     public List<Usuarios> ObtenerUsuariosID(@PathVariable("id_user") int pid){
         return new RushevoDb().ObtenerUsuariosPorId(pid);
+    }
+
+    @GetMapping("/rushevo_db/imagenes/all")
+    public List<ImagenesArticulos> ObtenerImagenes(){
+        return new RushevoDb().ObtenerImagenes();
     }
 
 

@@ -43,18 +43,18 @@ create table imagenes_articulos(
 		references articulos (id_pag)
 ); 
 
-insert into articulos (page_name, description, link) values ('Concepto','Explicación del concepto de Deportes Extremos','/contenido/deportes/concepto.html');
+insert into articulos (page_name, description, link) values ('Concepto','Explicaciï¿½n del concepto de Deportes Extremos','/contenido/deportes/concepto.html');
 insert into articulos (page_name, description, link) values ('Acerca De','Breve resumen sobre nosotros y el proyecto.','/contenido/acerca-de.html');
-insert into articulos (page_name, description, link) values ('Skate','Explicación sobre el deporte extremo de Skating.','/contenido/deportes/skate.html');
-insert into articulos (page_name, description, link) values ('Escalada','Explicación sobre el deporte extremo de escalar.','/contenido/deportes/escalada.html');
-insert into articulos (page_name, description, link) values ('Skydiving','Explicación sobre el deporte extremo de Skydiving o Paracaidismo.','/contenido/deportes/skydiving.html');
-insert into articulos (page_name, description, link) values ('Surf','Explicación sobre el deportes extremo de Surfing.','/contenido/deportes/surf.html');
-insert into articulos (page_name, description, link) values ('Motocross','Explicación sobre el deporte extremo de Motocross.','/contenido/deportes/motocross.html');
+insert into articulos (page_name, description, link) values ('Skate','Explicaciï¿½n sobre el deporte extremo de Skating.','/contenido/deportes/skate.html');
+insert into articulos (page_name, description, link) values ('Escalada','Explicaciï¿½n sobre el deporte extremo de escalar.','/contenido/deportes/escalada.html');
+insert into articulos (page_name, description, link) values ('Skydiving','Explicaciï¿½n sobre el deporte extremo de Skydiving o Paracaidismo.','/contenido/deportes/skydiving.html');
+insert into articulos (page_name, description, link) values ('Surf','Explicaciï¿½n sobre el deportes extremo de Surfing.','/contenido/deportes/surf.html');
+insert into articulos (page_name, description, link) values ('Motocross','Explicaciï¿½n sobre el deporte extremo de Motocross.','/contenido/deportes/motocross.html');
 
 
 
 
-insert into imagenes_articulos (pag_id, img_name, img_url) values (1, 'BannerPrueba', '/img/Concepto_2.jpg');
+insert into imagenes_articulos (pag_id, img_name, img_url) values (2, 'BannerPrueba', '/img/acerca-de.jpeg');
 
 
 select a.id_pag, a.link, i.id_img, i.img_name, i.img_url 
@@ -62,3 +62,5 @@ from articulos a
 inner join imagenes_articulos i;
 
 select * from articulos;
+
+insert into 

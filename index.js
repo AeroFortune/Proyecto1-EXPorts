@@ -1,6 +1,7 @@
 let baseUrl = "http://localhost:8080";
 let usuarios = [];
 let articulos = [];
+let imagenes = [];
 
 // Funciones para HeaderFooter Universales, ahorra trabajo pero lo unico malo es que no ayuda para el SEO (Search Engine Optimization).
 function ImprimirHeaderFooter(){
@@ -256,12 +257,14 @@ function ImprimirUsuario() {
     ).then(res => { res.json().then(json => {
       data = json;
       console.log(data); 
-      console.log(data.email);
-      document.getElementById('email').value = data.email;
-      document.getElementById('password').value = data.password;
-      document.getElementById('nombre').value = data.nombre;
-      document.getElementById('apellido').value = data.apellido;
-      document.getElementById('fecha_nac').value = data.fecha_nac;
+      console.log(data[0].fecha_nac);
+      // no es la mejor forma pero funciona, disculpe profe
+      console.log(data[0].email);
+      document.getElementById('email').value = data[0].email;
+      document.getElementById('password').value = data[0].password;
+      document.getElementById('nombre').value = data[0].nombre;
+      document.getElementById('apellido').value = data[0].apellido;
+      document.getElementById('fecha_nac').value = data[0].fecha_nac;
     });
     });
 
@@ -321,8 +324,8 @@ function ImprimirUsuario() {
 
 
 const formulario = document.querySelector("#formulario");
-const boton = document.querySelector("#boton")
-const resultado = document.querySelector("#resultado")
+const boton = document.querySelector("#boton");
+const resultado = document.querySelector("#resultado");
 
 const filtrar = () => {
   ObtenerActiculos();
@@ -336,13 +339,38 @@ const filtrar = () => {
       }
   }
 
-  if(resultado.innerHTML === ""){
-      resultado.innerHTML += `<a href="" class=" pag list-group-item list-group-item-action">Producto no encontrado...</a>`
+  if(resultado.innerHTML == ""){
+      resultado.innerHTML += `<a href="" class=" pag list-group-item list-group-item-action">No se han encontrado resultados. Por favor insertar datos validos...</a>`
   }
 }
-boton.addEventListener("click", filtrar)
-formulario.addEventListener("keyup",filtrar)
+// boton.addEventListener("click", filtrar)
+formulario.addEventListener("keyup",filtrar);
 filtrar();
 
-//perfil
+// quick cash grab (esta conectado con el backend, son puntos lol)
 
+
+function ObtenerImagenes() {
+
+  fetch(baseUrl + '/rushevo_db/imagenes/all').then(res => {
+    res.json().then(json => {
+      imagenes = json;
+      console.log(imagenes);
+      console.log('1');
+      ImprimirImagenes();
+    });
+  });
+}
+
+// Imprimir Articulos, auto explicatorio.
+function ImprimirImagenes() {
+  let contenedor = document.getElementById("imagenArticulo");
+
+  imagenes.forEach(imagenes => {
+    contenedor.innerHTML += MapearImagenes(imagenes);
+  });
+}
+
+function MapearImagenes(imagenes) {
+  return `<img src="${imagenes.img_url}" alt="${imagenes.img_name}" class="acerca-de-imagen">`;
+}
